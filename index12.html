@@ -1,0 +1,20 @@
+1. Add a column no_of_pages to the book_records table:
+
+ALTER TABLE book_records
+ADD no_of_pages INT;
+
+
+---
+
+2. Add a primary key (e.g., book_id):
+
+ALTER TABLE book_records
+ADD PRIMARY KEY (book_id);
+
+
+---
+
+3. Insert IoT book data into book_records table:
+
+INSERT INTO book_records (book_id, title, author, no_of_pages)
+VALUES (1, 'Internet of Things: A Hands-On-Approach', 'Arshdeep Bahga & Vijay Madisetti', 500);
