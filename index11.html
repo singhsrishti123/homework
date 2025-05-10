@@ -1,0 +1,14 @@
+1.create a database named "library".
+CREATE DATABASE library;
+2. delete above database.
+DROP DATABASE library;
+3. create a table named "book_records" with columns like Book_Library_No, Book_Name, Author_Name, Book_Edition, Price .
+CREATE TABLE book_records (
+    Book_Library_No INT PRIMARY KEY,
+    Book_Name VARCHAR(255),
+    Author_Name VARCHAR(255),
+    Book_Edition VARCHAR(50),
+    Price DECIMAL(10, 2)
+);
+4.delete above table.
+DROP TABLE book_records;
