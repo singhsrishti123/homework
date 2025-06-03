@@ -1,0 +1,39 @@
+print name and address
+const name = "John Doe";
+const address = "123 Main Street, Springfield";
+
+console.log("Name:", name);
+console.log("Address:", address);
+
+// Value and Data Type of Two Variables Are Same
+const a = 10;
+const b = "10";
+
+if (a === b) {
+  console.log("Same value and data type");
+} else {
+  console.log("Not same value or data type");
+}
+
+//Add Two Strings and Return Them in Uppercase
+const str1 = "hello";
+const str2 = "world";
+
+const result = (str1 + str2).toUpperCase();
+console.log(result);  // Output: HELLOWORLD
+
+// Convert the Length of a Given String in Bytes
+function getByteLength(str) {
+  return new TextEncoder().encode(str).length;
+}
+
+const myString = "Hello World!";
+console.log("Byte length:", getByteLength(myString));
+
+// Round a Number to a Specified Amount of Digits
+function roundToDigits(num, digits) {
+  const factor = Math.pow(10, digits);
+  return Math.round(num * factor) / factor;
+}
+
+console.log(roundToDigits(3.14159265, 2)); // Output: 3.14
