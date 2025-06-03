@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Array Operations</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: pink;
+      color: aqua;
+    }
+    pre {
+      background: red;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Array Operations</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const output = [];
+
+    // 1. Sort a JavaScript Array
+    const unsortedArray = [5, 2, 9, 1, 7];
+    const sortedArray = [...unsortedArray].sort((a, b) => a - b);
+    output.push("1. Sorted Array:");
+    output.push("Original: " + JSON.stringify(unsortedArray));
+    output.push("Sorted: " + JSON.stringify(sortedArray));
+
+    // 2. Concatenate Two Arrays
+    const array1 = [1, 2, 3];
+    const array2 = [4, 5, 6];
+    const concatenatedArray = array1.concat(array2);
+    output.push("\n2. Concatenated Arrays:");
+    output.push("Array 1: " + JSON.stringify(array1));
+    output.push("Array 2: " + JSON.stringify(array2));
+    output.push("New Array: " + JSON.stringify(concatenatedArray));
+
+    // 3. Remove First Element from Array
+    const originalArray = [10, 20, 30, 40];
+    const modifiedArray = [...originalArray];
+    const removedElement = modifiedArray.shift();
+    output.push("\n3. Remove First Element:");
+    output.push("Original Array: " + JSON.stringify(originalArray));
+    output.push("Removed Element: " + removedElement);
+    output.push("Modified Array: " + JSON.stringify(modifiedArray));
+
+    // Show output
+    document.getElementById('output').textContent = output.join('\n');
+    console.log(output.join('\n'));
+  </script>
+
+</body>
+</html>

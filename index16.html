@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Function Exercises</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: pink;
+      color: aqua;
+    }
+    pre {
+      background: red;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Function Results</h1>
+  <pre id="output"></pre>
+
+  <script>
+    // 1. Function to filter out negative numbers
+    function filterNegatives(arr) {
+      return arr.filter(num => num >= 0);
+    }
+
+    // 2. Difference between number and 13, double if greater
+    function diffFrom13(n) {
+      return n > 13 ? 2 * Math.abs(n - 13) : 13 - n;
+    }
+
+    // 3. Fibonacci series function
+    function fibonacciSeries(limit) {
+      const series = [0, 1];
+      while (series.length < limit) {
+        series.push(series[series.length - 1] + series[series.length - 2]);
+      }
+      return series;
+    }
+
+    // 4. Sum of multiples of 3 and 5 under 1000
+    function sumMultiples3And5(limit) {
+      let sum = 0;
+      for (let i = 1; i < limit; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          sum += i;
+        }
+      }
+      return sum;
+    }
+
+    // 5. Cube of a number using Function object
+    const cube = new Function('n', 'return n * n * n;');
+
+    // Output Results
+    const output = [];
+
+    output.push("1. Filter Negatives:");
+    output.push(JSON.stringify(filterNegatives([3, -1, 5, -6, 0, 12])));
+
+    output.push("\n2. Difference from 13:");
+    output.push("Input: 20 → " + diffFrom13(20));
+    output.push("Input: 10 → " + diffFrom13(10));
+
+    output.push("\n3. Fibonacci Series (10 terms):");
+    output.push(fibonacciSeries(10).join(", "));
+
+    output.push("\n4. Sum of Multiples of 3 & 5 under 1000:");
+    output.push(sumMultiples3And5(1000));
+
+    output.push("\n5. Cube of 3:");
+    output.push(cube(3));
+
+    // Show output on the page
+    document.getElementById('output').textContent = output.join("\n");
+    console.log(output.join("\n"));
+  </script>
+
+</body>
+</html>
