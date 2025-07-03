@@ -1,0 +1,16 @@
+ALTER TABLE book_records
+ADD no_of_pages INT;
+
+
+ALTER TABLE book_records
+ADD PRIMARY KEY (Book_Name);
+
+ALTER TABLE book_records
+DROP PRIMARY KEY;
+
+
+INSERT INTO book_records (
+    Book_Library_No, Book_Name, Author_Name, Book_Edition, Price, no_of_pages
+) VALUES (
+    101, 'The Great Gatsby', 'F. Scott Fitzgerald', '1st', 350.00, 180
+);

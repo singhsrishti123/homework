@@ -1,85 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>JavaScript Function Exercises</title>
+  <title>JavaScript Combined Tasks</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: pink;
-      color: aqua;
+      background-color: pink;
+      color: orange ;
     }
-    pre {
+    form, section {
       background: red;
       padding: 1rem;
+      margin-bottom: 20px;
       border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-  <h1>JavaScript Function Results</h1>
-  <pre id="output"></pre>
+  <!-- 1. Basic Info Form -->
+  <section>
+    <h2>1. Basic Information Form</h2>
+    <form id="infoForm">
+      <label>Name: <input type="text" id="name" required></label><br><br>
+      <label>Email: <input type="email" id="email" required></label><br><br>
+      <label>Age: <input type="number" id="age" required></label><br><br>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="formOutput"></div>
+  </section>
+
+  <!-- 2. Image Change on Button Click -->
+  <section>
+    <h2>2. Image Changer</h2>
+    <img id="changeableImage" src="changeableImage.jpg" alt="Sample Image">
+    <br>
+    <button onclick="changeImage()">Change Image</button>
+  </section>
+
+  <!-- 3. Font Size Control -->
+  <section>
+    <h2>3. Font Size Controller</h2>
+    <p id="resizableText">This is a resizable paragraph. Click the buttons to change font size.</p>
+    <button onclick="adjustFontSize(1)">Increase Font</button>
+    <button onclick="adjustFontSize(-1)">Decrease Font</button>
+  </section>
+
+  <!-- 4. Date and Time -->
+  <section>
+    <h2>4. Current Date & Time</h2>
+    <div id="dateTime"></div>
+  </section>
 
   <script>
-    // 1. Function to filter out negative numbers
-    function filterNegatives(arr) {
-      return arr.filter(num => num >= 0);
+    // 1. Form Submission and Display
+    document.getElementById('infoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const age = document.getElementById('age').value;
+
+      const output = `
+        <h3>Submitted Information:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Age:</strong> ${age}</p>
+      `;
+      document.getElementById('formOutput').innerHTML = output;
+    });
+
+    // 2. Image Change Function
+    function changeImage() {
+      const img = document.getElementById('changeableImage');
+      img.src = "changeableImage.jpg";
     }
 
-    // 2. Difference between number and 13, double if greater
-    function diffFrom13(n) {
-      return n > 13 ? 2 * Math.abs(n - 13) : 13 - n;
+    // 3. Font Size Adjustment
+    let fontSize = 16;
+    function adjustFontSize(change) {
+      fontSize += change;
+      if (fontSize < 10) fontSize = 10;
+      document.getElementById('resizableText').style.fontSize = fontSize + 'px';
     }
 
-    // 3. Fibonacci series function
-    function fibonacciSeries(limit) {
-      const series = [0, 1];
-      while (series.length < limit) {
-        series.push(series[series.length - 1] + series[series.length - 2]);
-      }
-      return series;
+    // 4. Display Current Date & Time
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('dateTime').textContent = now.toLocaleString();
     }
-
-    // 4. Sum of multiples of 3 and 5 under 1000
-    function sumMultiples3And5(limit) {
-      let sum = 0;
-      for (let i = 1; i < limit; i++) {
-        if (i % 3 === 0 || i % 5 === 0) {
-          sum += i;
-        }
-      }
-      return sum;
-    }
-
-    // 5. Cube of a number using Function object
-    const cube = new Function('n', 'return n * n * n;');
-
-    // Output Results
-    const output = [];
-
-    output.push("1. Filter Negatives:");
-    output.push(JSON.stringify(filterNegatives([3, -1, 5, -6, 0, 12])));
-
-    output.push("\n2. Difference from 13:");
-    output.push("Input: 20 → " + diffFrom13(20));
-    output.push("Input: 10 → " + diffFrom13(10));
-
-    output.push("\n3. Fibonacci Series (10 terms):");
-    output.push(fibonacciSeries(10).join(", "));
-
-    output.push("\n4. Sum of Multiples of 3 & 5 under 1000:");
-    output.push(sumMultiples3And5(1000));
-
-    output.push("\n5. Cube of 3:");
-    output.push(cube(3));
-
-    // Show output on the page
-    document.getElementById('output').textContent = output.join("\n");
-    console.log(output.join("\n"));
+    setInterval(updateTime, 1000); // Update every second
+    updateTime(); // Initial call
   </script>
 
 </body>

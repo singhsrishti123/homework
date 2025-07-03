@@ -1,0 +1,16 @@
+
+CREATE DATABASE library;
+
+DROP DATABASE library;
+
+
+CREATE TABLE book_records (
+    Book_Library_No INT PRIMARY KEY,
+    Book_Name VARCHAR(255),
+    Author_Name VARCHAR(255),
+    Book_Edition VARCHAR(50),
+    Price DECIMAL(10, 2)
+);
+
+
+DROP TABLE book_records;
