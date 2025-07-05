@@ -1,81 +1,73 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title> TABLE </title>
-
-<style>
-table {width:100%;
-        border-collapse:collapse;}
-th{
-    text-align: middle;
-    }
-
-     td{ border: 2px solid orange:
-       text-align: center;
-      }
-
-    td{ text-align: center;
-        color: black;
-        background-color: pink;
-    }
-    th{color: red;
-       background-color: grey;}
-     p ,b, centre {
-           color:purple;
-           background-color:white;}
-		   
-
-</style>
+    <title>Student Info Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid blue;
+            padding: 8px 12px;
+            text-align: center;
+        }
+		td{ text-align: center;
+	    color: orange;
+		background-color: orange;
+	   }
+		th{color: blue;
+	   background-color:pink;}
+	   
+	 
+    </style>
 </head>
 <body>
+
 <table>
 
-<p><b><center>
-   STUDENT LIST
-</center></b></p>
-
-<tr>
-      <th rowspan="2">Name</th>
-      <th rowspan="2">Registration No.</th>
-      <th colspan="1">Academic Performance</th>
-      <th rowspan="2">Taught in Last Session</th>
-</tr>
-<tr>
-    <th>CGPA Till Last Semester (Out of 10)</th>
-	 </tr>
-  </thead>
-  <tbody>
     <tr>
-	
-      <td>alok</td>
-      <td>23155135001</td>
-      <td>8.5</td>
-      <td>Math</td>
+        <th rowspan="2">Name</th>
+        <th rowspan="2">Registration No</th>
+        <th colspan="2">CGPA</th>
+    </tr>
+    <tr>
+        <th>Till Last Sem</th>
+        <th>Remarks</th>
+    </tr>
+    <tr>
+        <td>srishti</td>
+        <td>2315513508</td>
+        <td>8.7</td>
+        <td>Good</td>
+    </tr>
+    <tr>
+        <td>Nikhil Raj</td>
+        <td>2315513510</td>
+        <td>9.2</td>
+        <td>Excellent</td>
     </tr>
 	<tr>
-      <td>roshan</td>
-      <td>23155135003</td>
-      <td>9.2</td>
-      <td>Science</td>
+        <td>rohit Kumar</td>
+        <td>2315513511</td>
+        <td>7.2</td>
+        <td>Good</td>
     </tr>
-    <tr>
-      <td>puja</td>
-      <td>23155135008</td>
-      <td>7.8</td>
-      <td>English</td>
+	<tr>
+        <td>Pankaj Kumar</td>
+        <td>2315513512</td>
+        <td>8.2</td>
+        <td>Good</td>
     </tr>
-    <tr>
-      <td>rajesh</td>
-      <td>23155135018</td>
-      <td>8.9</td>
-      <td>Computer Science</td>
+	<tr>
+        <td>ritu</td>
+        <td>2315513516</td>
+        <td>9.2</td>
+        <td>Excellent</td>
     </tr>
-    <tr>
-      <td>pankaj</td>
-      <td>23155135022</td>
-      <td>7.5</td>
-      <td>History</td>
-    </tr>
-  </body>
 </table>
-<html>
+
+</body>
+</html>

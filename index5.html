@@ -1,94 +1,100 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarkari Result (Static Replica)</title>
-    <link rel="stylesheet" href="style.css">
+   
+    <title>Wonders of the World</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: red;
+        }
+
+        nav {
+            background-color: orange(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: aqua;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: pink;
+        }
+
+        .container {
+            padding: 30px;
+            background-color: red(0, 0, 0, 0.6);
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/sarkariresult_logo.png" alt="Sarkari Result">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="https://www.sarkariresult.com/latestjob/">Latest Job</a></li>
-                    <li><a href="#">Admit Card</a></li>
-                    <li><a href="#">Result</a></li>
-                    <li><a href="#">Answer Key</a></li>
-                    <li><a href="#">Syllabus</a></li>
-                    </ul>
-            </nav>
+
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('ancient')">Ancient Wonders</a>
+        <a onclick="showPage('modern')">Modern Wonders</a>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <h1>Welcome to Wonders of the World</h1>
+            <p>Explore the most breathtaking creations of humanity, from the marvels of ancient civilizations to the engineering feats of the modern world.</p>
+            <img src="Pyramids.jpg" alt="Pyramids">
         </div>
-    </header>
 
-    <div class="container main-content">
-        <aside class="left-sidebar">
-            <div class="section">
-                <h2>Latest Updates</h2>
-                <ul>
-                    <li><a href="#">[Date] Job Title 1</a></li>
-                    <li><a href="#">[Date] Admit Card for Exam X</a></li>
-                    <li><a href="#">[Date] Result of Recruitment Y</a></li>
-                    </ul>
-            </div>
-            </aside>
+        <!-- Ancient Wonders Page -->
+        <div id="ancient" class="page">
+            <h1>Ancient Wonders of the World</h1>
+            <p>The Seven Wonders of the Ancient World are iconic symbols of engineering, architecture, and creativity. Among the most famous is the Great Pyramid of Giza.</p>
+            <img src="Colosseum.jpg" alt="Colosseum">
+            
+        </div>
 
-        <main class="main-area">
-            <section class="section">
-                <h2>Latest Jobs</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Post Name</th>
-                            <th>Department</th>
-                            <th>Last Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Job A</td>
-                            <td>Department 1</td>
-                            <td>YYYY-MM-DD</td>
-                        </tr>
-                        <tr>
-                            <td>Job B</td>
-                            <td>Department 2</td>
-                            <td>YYYY-MM-DD</td>
-                        </tr>
-                        </tbody>
-                </table>
-            </section>
-
-            <section class="section">
-                <h2>Admit Card</h2>
-                <ul>
-                    <li><a href="#">[Date] Admit Card for Exam P</a></li>
-                    <li><a href="#">[Date] Hall Ticket for Test Q</a></li>
-                    </ul>
-            </section>
-
-            </main>
-
-        <aside class="right-sidebar">
-            <div class="section">
-                <h2>Important Links</h2>
-                <ul>
-                    <li><a href="#">Official Website</a></li>
-                    <li><a href="#">Help Desk</a></li>
-                    </ul>
-            </div>
-            </aside>
+        <!-- Modern Wonders Page -->
+        <div id="modern" class="page">
+            <h1>Modern Wonders of the World</h1>
+            <p>New wonders, such as the Taj Mahal and the Great Wall of China, reflect the ongoing creativity and passion of humankind through time.</p>
+            <img src="tajmahal" alt="Taj Mahal">
+        </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Sarkari Result (Static Replica)</p>
-        </div>
-    </footer>
+    <script>
+        function showPage(id) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
